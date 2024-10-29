@@ -1,0 +1,155 @@
+/* Eric Rutledge 10/28/2024
+	Adapted from https://javascript30.com/
+	JS and CSS Clock
+	Modifications and changes:
+	Adjusted bezier for a smoother bounce
+	Increased transition time for each hand from .05 to .1 seconds
+  Each hand now has seperate sizes
+  Added clock-center
+  Transform-origin of hand class is now "center right" instead of "100%"
+  Added translate to transform of hand class
+  Set background image to be fixed and have no overflow
+  clock now uses vmin for size rather than a fixed pixel size
+  Added gear's
+*/
+
+html {
+  background: #018DED url(images/background.png);
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* original .clock
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
+}
+*/
+.clock {
+  width: 50vmin;
+  height: 50vmin;
+  margin: 50px auto;
+  position: relative;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*transform: translateY(-3px);*/
+  /* account for the height of the clock hands */
+  /* Deemed unecessary and incompatible with new hand sizes */
+}
+
+.clock-center {
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  box-shadow:
+    0 0 0 4px rgba(0, 0, 0, 0.1),
+    outset 0 0 0 3px black,
+    outset 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Original .hand
+.hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    }
+*/
+.hand {
+  background: black;
+  position: absolute;
+  top: 50%;
+  transform-origin: right center;
+  transform: translate(0, -50%) rotate(90deg);
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.25, 1.75, 0.5, 1);
+}
+
+#second-hand {
+  width: 50%;
+  height: 4px;
+}
+
+#min-hand {
+  left: 5%;
+  width: 45%;
+  height: 6px;
+}
+
+#hour-hand {
+  left: 10%;
+  width: 40%;
+  height: 10px;
+}
+
+#full-gear {
+  top: 50%;
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+  transition-timing-function: linear;
+}
+
+#half-gear {
+  top: 50%;
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  transform: translate(-50%, -50%);
+  transition: all .25s;
+  transition-timing-function: linear;
+}
+
+#small-gear {
+  top: 50%;
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  transition: all .125s;
+  transition-timing-function: linear;
+}
+
+.notransition {
+  transition: none !important;
+}

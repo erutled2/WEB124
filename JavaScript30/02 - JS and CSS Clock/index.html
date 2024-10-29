@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/✅" />
+  <meta name="author" content="Eric Rutledge">
+  <meta name="date" content="10/28/2024">
+  <!-- Eric Rutledge 10/28/2024 -->
+  <!-- Adapted from https://javascript30.com/
+      JS and CSS Clock -->
+  <!--
+      Moved embeded style sheet into external style.css file
+      Moved embeded script into external javascript.js file
+      Adjusted hands to use id's for each hand type
+      Added clock center
+      Added three gears to correspond with the existing hands
+    -->
+</head>
+
+<body>
+  <div class="clock">
+    <div class="clock-face">
+      <img class="gear" id="full-gear" src="images/gear.png"></img>
+      <img class="gear" id="half-gear" src="images/half_gear.png"></img>
+      <img class="gear" id="small-gear" src="images/half_gear.png"></img>
+      <div class="hand" id="hour-hand"></div>
+      <div class="hand" id="min-hand"></div>
+      <div class="hand" id="second-hand"></div>
+      <div class="clock-center"></div>
+    </div>
+  </div>
+  <script src="javascript.js"></script>
+</body>
+
+</html>

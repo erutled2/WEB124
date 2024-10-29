@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/✅" />
+  <meta name="author" content="Eric Rutledge">
+  <meta name="date" content="10/28/2024">
+  <!-- Eric Rutledge 10/28/2024 -->
+  <!-- Adapted from https://javascript30.com/
+		Fun with HTML5 Canvas -->
+  <!--
+		Moved embeded style sheet into seperate style.css file
+		Moved embeded script into seperate javascript.js file
+    Moved canvas styling into style.css
+	-->
+</head>
+
+<body>
+  <!--<canvas id="draw" width="800" height="800"></canvas>-->
+  <canvas id="draw"></canvas>
+  <div class="options">
+    <div>
+      <label for="spacing">Canvas Background:</label>
+      <input id="background" type="color" name="background" value="#ffffff">
+    </div>
+
+    <div>
+      <label for="blur">Brush Size:</label>
+      <input id="size" type="range" name="size" min="1" max="100" value="50" data-sizing="px">
+    </div>
+
+    <div>
+      <label for="base">Brush Color:</label>
+      <input id="color" type="color" name="color" value="#ff0000">
+    </div>
+  </div>
+  <script src="javascript.js"></script>
+
+</body>
+
+</html>

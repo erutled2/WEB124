@@ -1,0 +1,28 @@
+/* Eric Rutledge 10/28/2024
+	Adapted from https://javascript30.com/
+	Mouse Move Shadow
+	Modifications and changes:
+	No changes
+*/
+
+html {
+    color: black;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+h1 {
+    text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+    font-size: 100px;
+}
